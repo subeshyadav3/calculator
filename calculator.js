@@ -1,24 +1,23 @@
-// Get DOM elements
+
 const box = document.getElementById('box');
 const buttons = document.querySelectorAll(".button");
 const mode1 = document.getElementById("mode");
 
-// Initialize variables
+
 let calculation = '';
 let light = true;
 
-// Function to update the display
 function Display(value){
     calculation = calculation + value;
     change(calculation);
 }
 
-// Function to change input in the box
+
 function change(calculation){
     box.value = calculation;
 }
 
-// Function to evaluate and display result
+
 function cal(){
     try {
         if (calculation.includes("**") || calculation.includes("//")) {
@@ -33,19 +32,19 @@ function cal(){
     }
 }
 
-// Function to remove the last digit
+
 function removeOne(){
     calculation = calculation.slice(0, -1);
     box.value = calculation;
 }
 
-// Function to reset the calculator
+
 function reset(){
     box.value = '';
     calculation = '';
 }
 
-// Function to toggle between light and dark modes
+
 function calcTheme(){
     if(light){
         buttons.forEach(e => {
@@ -68,7 +67,7 @@ function calcTheme(){
     }
 }
 
-// Function to toggle between light and dark modes and update the button text
+
 function mode(){
     if(light){
         mode1.innerText = "Dark Mode";
